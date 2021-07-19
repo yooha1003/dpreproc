@@ -26,7 +26,7 @@
 ## Usage
 + <b>Run in Terminal</b>
 ```
-dpreproc.sh --in=dwi.nii.gz --readT=0.0718
+dpreproc.sh --dwi=dwi.nii.gz --readT=0.0718
 ```
 + <b>Help</b>
 ```
