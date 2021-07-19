@@ -20,7 +20,7 @@ Usage() {
     echo " Usage: dpreproc.sh --dwi=<dwi.nii.gz> --readT=<0.0700> "
     echo ""
     echo " ++ Example ++
-        dpreproc.sh --in=dwi.nii.gz --readT=0.0718 "
+        dpreproc.sh --dwi=dwi.nii.gz --readT=0.0718 "
     echo ""
     echo " [Option Description] "
     echo "    --dwi=<image>        : DWI image "
@@ -167,7 +167,7 @@ printf "0 -1 0 $read_ot" > ${dwi_img}_acqparams.txt
 
 ############# [0] DWI brain extraction #########################################
 fslreorient2std ${dwi_img} ${dwi_img}_ro
-# fslreorient2std ${t1_img} ${t1_img}_ro
+fslmaths ${dwi_img}_ro ${dwi_img}_ro.nii.gz
 ## b0 image extraction
 fslroi ${dwi_img}_ro ${dwi_img}_nodif 0 1
 
